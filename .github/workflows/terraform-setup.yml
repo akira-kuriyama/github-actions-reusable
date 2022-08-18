@@ -4,16 +4,16 @@ on:
   pull_request:
 
   workflow_call:
-    inputs:
-      working-directory:
-        description: ワーキングディレクトリ
-        type: string
-        required: true
-      aws-region:
-        description: AWS のリージョン名
-        type: string
-        default: ap-northeast-1
-        required: false
+#    inputs:
+#      working-directory:
+#        description: ワーキングディレクトリ
+#        type: string
+#        required: true
+#      aws-region:
+#        description: AWS のリージョン名
+#        type: string
+#        default: ap-northeast-1
+#        required: false
 #    secrets:
 #      aws-access-key-id:
 #        description: AWSアクセスキーID
@@ -31,10 +31,10 @@ jobs:
   terraform:
     name: Terraform
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: bash
-        working-directory: ${{ inputs.working-directory }}
+#    defaults:
+#      run:
+#        shell: bash
+#        working-directory: ${{ inputs.working-directory }}
     steps:
       - uses: actions/checkout@v2
 #      - uses: aws-actions/configure-aws-credentials@v1
