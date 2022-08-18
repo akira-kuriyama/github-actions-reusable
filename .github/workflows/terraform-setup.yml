@@ -1,16 +1,16 @@
 name: Terraform Setup
 on:
   workflow_call:
-#    inputs:
-#      working-directory:
-#        description: ワーキングディレクトリ
-#        type: string
-#        required: true
-#      aws-region:
-#        description: AWS のリージョン名
-#        type: string
-#        default: ap-northeast-1
-#        required: false
+    inputs:
+      working-directory:
+        description: ワーキングディレクトリ
+        type: string
+        required: true
+      aws-region:
+        description: AWS のリージョン名
+        type: string
+        default: ap-northeast-1
+        required: false
 #    secrets:
 #      aws-access-key-id:
 #        description: AWSアクセスキーID
