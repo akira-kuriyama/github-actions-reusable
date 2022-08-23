@@ -1,45 +1,10 @@
-name: Terraform Setup
-on:
-  workflow_call:
-#    inputs:
-#      working-directory:
-#        description: ワーキングディレクトリ
-#        type: string
-#        required: true
-#      aws-region:
-#        description: AWS のリージョン名
-#        type: string
-#        default: ap-northeast-1
-#        required: false
-#    secrets:
-#      aws-access-key-id:
-#        description: AWSアクセスキーID
-#        required: true
-#      aws-secret-access-key:
-#        description: AWSシークレットアクセスキー
-#        required: true
-#      github-token:
-#        description: GitHubのトークン
-#        required: true
-#      slack-webhook-url:
-#        description: SlackのWebhook URL
-#        required: false
-jobs:
-  terraform:
-    name: Terraform
-    runs-on: ubuntu-latest
-#    defaults:
-#      run:
-#        shell: bash
-#        working-directory: ${{ inputs.working-directory }}
-    steps:
-#      - uses: actions/checkout@v2
-#      - uses: aws-actions/configure-aws-credentials@v1
-#        with:
-#          aws-region: ap-northeast-1
-#          aws-access-key-id: ${{ secrets.aws-access-key-id }}
-#          aws-secret-access-key: ${{ secrets.aws-secret-access-key }}
-#      - run: echo "##[set-output name=text;]$(cat $GITHUB_WORKSPACE/infra/.terraform-version | tr -d '\n')" # Terraform のバージョンを取得する
-      - run: |
-          echo "hogeeeee!!" # Terraform のバージョンを取得する
-          ls -alrt
+name: sample
+description: sample
+runs:
+  using: "composite"
+  steps:
+    - name: echo
+      id: echo
+      shell: bash
+      run: |
+        echo "sample"
