@@ -43,17 +43,6 @@ runs:
         envsubst < .github/actions/image-scan/results.tmpl > trivy-results.txt
         cat trivy-results.txt >> $GITHUB_STEP_SUMMARY
 
-    - name: Close issue
-      # TODO: cronで実行するようにしたらこっちを有効化する
-      # if: github.event.schedule != '' && success()
-      if: github.event.schedule == '' && success()
-      shell: bash
-      run: |
-        ISSUE_NUM=`gh issue list --search "trivy sort:updated-desc " --state open --limit 1 --label image-vulnerability --json number --jq ".[].number"`
-        if [ -n "$ISSUE_NUM" ]; then
-          gh issue close $ISSUE_NUM 
-        fi
-
     - name: Create issue
       # TODO: cronで実行するようにしたらこっちを有効化する
       # if: github.event.schedule != '' && failure()
