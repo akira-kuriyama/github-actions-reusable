@@ -40,7 +40,7 @@ runs:
         export BRANCH="${{ github.head_ref || github.ref_name }}"
         export REVISION="${{ github.event.pull_request.head.sha || github.sha }}"
         export TRIVY_RESULTS=`cat trivy-results-raw.txt`
-        envsubst < ./results.tmpl > trivy-results.txt
+        envsubst < ./tmp/.github/actions/image-scan/results.tmpl > trivy-results.txt
         cat trivy-results.txt >> $GITHUB_STEP_SUMMARY
 
     - name: Create issue
